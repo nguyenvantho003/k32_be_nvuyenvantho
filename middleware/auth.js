@@ -26,7 +26,7 @@ export const authAdmin = (req, res, next) => {
   const accessToken = authorization.split(' ')[1]
   const { user } = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET_KEY)
   if (user.role !== "admin") {
-    handleResponseError(res, 404, 'Forbidden')
+    handleResponseError(res, 403, 'Forbidden')
     return
   }
   next()
