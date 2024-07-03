@@ -37,7 +37,7 @@ const createNewMovie = async (req, res) => {
     return
   }
   const newMovie = await Movies.create({ title, year, poster })
-  console.log("newMovie", newMovie)
+  console.log("newMovie", {...newMovie})
   handleResponseSuccess(res, 201, "Create new movie successfully", {...newMovie._doc})
 }
 

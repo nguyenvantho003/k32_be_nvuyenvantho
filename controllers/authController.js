@@ -48,7 +48,7 @@ const login = async (req, res) => {
     return
   }
   const accessToken = generateAccessToken(checkEmailUser)
-  console.log ("accessToken", accessToken)
+  console.log("accessToken", accessToken)
   handleResponseSuccess(res, 200, "Login successfully", {
     email,
     role: checkEmailUser?.role,
